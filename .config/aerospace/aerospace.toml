@@ -164,6 +164,22 @@ alt-shift-l = ['join-with right', 'mode main']
 # Callbacks
 # App specific Workspaces
 [[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.QuickTimePlayerX'
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = 'com.colliderli.iina'
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = 'com.github.GitHubClient'
+run = "layout floating"
+
+[[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 run = "move-node-to-workspace 1"
 
@@ -196,10 +212,6 @@ if.app-id = 'ch.protonvpn.mac'
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = "layout floating"
-
-[[on-window-detected]]
 if.app-id = 'com.apple.Music'
 run = "move-node-to-workspace 4"
 
@@ -209,6 +221,10 @@ run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Terminal'
+run = "move-node-to-workspace 5"
+
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
 run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
