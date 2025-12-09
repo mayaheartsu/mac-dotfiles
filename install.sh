@@ -22,3 +22,4 @@ brew bundle cleanup --global --force
 cp -r ~/mac-dotfiles/.config/* ~/.config
 cp ~/mac-dotfiles/.p10k.zsh ~/
 cp ~/mac-dotfiles/.zshrc ~/
+cp ~/mac-dotfiles/.zprofile ~/
