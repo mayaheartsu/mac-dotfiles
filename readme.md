@@ -24,7 +24,7 @@ git clone https://github.com/mayaheartsu/mac-dotfiles
 ```
 
 ## install script
-run install script to acquire the appropriate packages and config files to the appropriate directories
+run install script to download the appropriate packages and copy config files to their corresponding locations
 ```
 cd mac-dotfiles
 chmod +x install.sh
