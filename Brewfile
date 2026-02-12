@@ -8,7 +8,7 @@ brew "cmatrix"
 brew "eza"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
-# Play, record, convert, and stream audio and video
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
@@ -33,7 +33,7 @@ brew "felixkratz/formulae/borders"
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
 # AeroSpace is an i3-like tiling window manager for macOS
-cask "aerospace"
+cask "nikitabobko/tap/aerospace"
 # Multi-track audio editor and recorder
 cask "audacity"
 # Desktop password and login vault
@@ -52,10 +52,14 @@ cask "helium-browser"
 cask "iina"
 # GPU-based terminal emulator
 cask "kitty"
+# Open-source cross-platform alternative to AirDrop
+cask "localsend"
 # Visual diff and merge tool
 cask "meld"
 # Open-source software for live streaming and screen recording
 cask "obs"
+# Minecraft launcher
+cask "prismlauncher"
 # VPN client focusing on security
 cask "protonvpn"
 # Music streaming service
