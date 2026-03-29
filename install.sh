@@ -13,7 +13,7 @@ git clone https://github.com/mayaheartsu/mac-dotfiles
 # Install Brewfile
 cp ~/mac-dotfiles/Brewfile ~/
 brew bundle
-brew bundle cleanup --global --force
+# brew bundle cleanup --global --force
 
 # Create config directory, copy aerospace, sketchybar, oh-my-posh, zsh, kitty, & yazi configs from repo to .config locations
 mkdir ~/.config
