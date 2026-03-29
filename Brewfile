@@ -62,10 +62,14 @@ cask "obs"
 cask "prismlauncher"
 # VPN client focusing on security
 cask "protonvpn"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Music streaming service
 cask "spotify"
 # Video game digital distribution service
 cask "steam"
+# Open-source media center
+cask "stremio"
 # Binary releases of VS Code without MS branding/telemetry/licensing
 cask "vscodium"
 vscode "github.vscode-pull-request-github"
