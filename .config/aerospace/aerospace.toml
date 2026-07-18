@@ -4,6 +4,11 @@
 # It's not necessary to copy all keys to your config.
 # If the key is missing in your config, "default-config.toml" will serve as a fallback
 
+# Config version for compatibility and deprecations
+# See: https://nikitabobko.github.io/AeroSpace/guide#config-version
+# Fallback value (if you omit the key): config-version = 1
+config-version = 2
+
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
@@ -150,102 +155,153 @@ alt-shift-semicolon = 'mode service'
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
-esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main'] # reset layout
-#s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-backspace = ['close-all-windows-but-current', 'mode main']
+    esc = ['reload-config', 'mode main']
+    r = ['flatten-workspace-tree', 'mode main'] # reset layout
+    f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+    backspace = ['close-all-windows-but-current', 'mode main']
 
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
+    # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+    #s = ['layout sticky tiling', 'mode main']
+
+    alt-shift-h = ['join-with left', 'mode main']
+    alt-shift-j = ['join-with down', 'mode main']
+    alt-shift-k = ['join-with up', 'mode main']
+    alt-shift-l = ['join-with right', 'mode main']
 
 # Callbacks
-# App specific Workspaces
+# App specific layouts
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
-run = "layout floating"
+check-further-callbacks = true
+run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.QuickTimePlayerX'
-run = "layout floating"
+check-further-callbacks = true
+run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.colliderli.iina'
-run = "layout floating"
+check-further-callbacks = true
+run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.github.GitHubClient'
-run = "layout floating"
+check-further-callbacks = true
+run = 'layout floating'
 
+
+
+# App specific Workspaces
+# Workspace 1: Browsers
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
-run = "move-node-to-workspace 1"
+check-further-callbacks = true
+run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id = 'net.imput.helium'
-run = "move-node-to-workspace 1"
+check-further-callbacks = true
+run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari'
-run = "move-node-to-workspace 1"
+check-further-callbacks = true
+run = 'move-node-to-workspace 1'
 
+
+# Workspace 2: Chat & Messages
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
-run = "move-node-to-workspace 2"
+check-further-callbacks = true
+run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.MobileSMS'
-run = "move-node-to-workspace 2"
+check-further-callbacks = true
+run = 'move-node-to-workspace 2'
 
+
+# Workspace 3: Security & Passwords
 [[on-window-detected]]
 if.app-id = 'com.bitwarden.desktop'
-run = "move-node-to-workspace 3"
+check-further-callbacks = true
+run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Passwords'
-run = "move-node-to-workspace 3"
+check-further-callbacks = true
+run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
 if.app-id = 'ch.protonvpn.mac'
-run = "move-node-to-workspace 3"
+check-further-callbacks = true
+run = ['layout floating', 'move-node-to-workspace 3']
 
+
+# Workspace 4: Music
 [[on-window-detected]]
 if.app-id = 'com.apple.Music'
-run = "move-node-to-workspace 4"
+check-further-callbacks = true
+run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = "move-node-to-workspace 4"
+check-further-callbacks = true
+run = 'move-node-to-workspace 4'
 
+
+# Workspace 5: Terminal
 [[on-window-detected]]
 if.app-id = 'com.apple.Terminal'
-run = "move-node-to-workspace 5"
+check-further-callbacks = true
+run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.kitty'
-run = "move-node-to-workspace 5"
+check-further-callbacks = true
+run = 'move-node-to-workspace 5'
 
+
+# Workspace 6: Text Editors
 [[on-window-detected]]
 if.app-id = 'com.apple.TextEdit'
-run = "move-node-to-workspace 6"
+check-further-callbacks = true
+run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
 if.app-id = 'com.vscodium'
-run = "move-node-to-workspace 6"
+check-further-callbacks = true
+run = 'move-node-to-workspace 6'
 
+
+# Workspace 7: Audio & Recording
 [[on-window-detected]]
 if.app-id = 'com.obsproject.obs-studio'
-run = "move-node-to-workspace 7"
+check-further-callbacks = true
+run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
 if.app-id = 'org.audacityteam.audacity'
-run = "move-node-to-workspace 7"
+check-further-callbacks = true
+run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
+if.app-id = 'com.westbridge.stremio5-mac'
+check-further-callbacks = true
+run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
+if.app-id = 'app.harbor'
+check-further-callbacks = true
+run = 'move-node-to-workspace 7'
+
+
+# Workspace 8: Gaming
+[[on-window-detected]]
 if.app-id = 'com.valvesoftware.steam'
-run = "move-node-to-workspace 8"
+check-further-callbacks = true
+run = 'move-node-to-workspace 8'
 
 # Run Sketchybar together with AeroSpace
 # sketchbar has a built-in detection of already running process,
